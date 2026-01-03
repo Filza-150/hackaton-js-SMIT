@@ -1,143 +1,86 @@
 import supabase from "./config.js";
 
-
-let regFrom = document.getElementById('regFrom')
-//FOR SIGNUP setup first time  go your project -> authentication -> signin/providers -> 
+let regFrom = document.getElementById("sigup-form");
+//FOR SIGNUP setup first time  go your project -> authentication -> signin/providers ->
 // 1.Confirm email <disabled> 2. enabled email
 
-
-let semail = document.getElementById('exampleInputEmail1')
-let spassword = document.getElementById('exampleInputPassword1')
-let sname = document.getElementById('username')
-let scontact = document.getElementById('usercontact')
+let semail = document.getElementById("sigup-email");
+let spassword = document.getElementById("sigup-password");
+let sname = document.getElementById("sigup-name");
 
 
+async function signup(e) {
+  e.preventDefault();
+  try {
+    if (!semail.value) {
+      alert("plz enter your email");
 
-async function signup(e){
-    e.preventDefault()
- try{
-    if(!semail.value){
-        alert('plz enter your email');
-        
-     return
+      return;
     }
-     if(!spassword.value){
-         alert('plz enter your password');
-     return
+    if (!spassword.value) {
+      alert("plz enter your password");
+      return;
     }
-   const { data, error } = await supabase.auth.signUp({
-  email: semail.value,
-  password: spassword.value,
-    options: {
-      data: {
-        phone: scontact.value,
-        Name:sname.value ,
-      }
-    }
-})
+    const { data, error } = await supabase.auth.signUp({
+      email: semail.value,
+      password: spassword.value,
+      options: {
+        data: {
+          Name: sname.value,
+          role:'user'
+        },
+      },
+    });
 
-
-if(error){
-    console.log(error);
-    return
-
-    
-}else{
+    if (data) {
+      console.log(data);
+     const {id,user_metadata} = data.user
   
-  // location.href = 'home.html'
-}
+  
 
- }catch(err){
+
+      const { error:dberr } = await supabase
+  .from('customers')
+  .insert({ uid: id, username: user_metadata.Name,email: user_metadata.email,
+    role:user_metadata.role
+   })
+  if(dberr){
+    console.log(dberr);
+    
+  }else{
+    alert('signup succesfully')
+    location.href = './index.html'
+  }
+
+
+    } else {
+      console.log(error);
+    }
+  } catch (err) {
     console.log(err);
-    
- }
-      
+  }
 }
 
-
-
-regFrom && regFrom.addEventListener('submit',signup)
-
-
-// ________________________login
-
-
-let loginForm = document.getElementById('loginForm')
+regFrom && regFrom.addEventListener("submit", signup);
 
 
 
-let lemail = document.getElementById('exampleInputEmail1')
-let lpassword = document.getElementById('exampleInputPassword1')
+// //logout functionality___________________________________
+let logoutBtn = document.getElementById("logBtn");
 
-
-
-
-
-async function login(e){
-    e.preventDefault()
- try{
-    if(!lemail.value){
-        alert('plz enter your email');
-        
-     return
-    }
-     if(!lpassword.value){
-         alert('plz enter your password');
-     return
-    }
-   const { data, error } = await supabase.auth.signInWithPassword({
-  email: lemail.value,
-  password: lpassword.value,
-   
-})
-if(error){
-    console.log(error);
-    return
-
-    
-}else{
-Swal.fire({
-  title: "login",
-  text: "congratulation , you are signed in",
-  icon: "success"
-});
-
-location.href = 'home.html'
-
+async function logout(e) {
+  e.preventDefault()
   
+  try {
+    const { error } = await supabase.auth.signOut();
+
+    if (!error) {
+      alert("logout successfully");
+     
+    }
+  } catch (er) {
+    console.log(er);
+  }
 }
 
- }catch(err){
-    console.log(err);
-    
- }
-      
-}
-
-
-
-
-
-loginForm && loginForm.addEventListener('submit',login)
-
-//logout functionality___________________________________
-let logoutBtn = document.getElementById('logout')
-
-
-async function logout (){
-  try{
-
- 
-const { error } = await supabase.auth.signOut()
-
-if (!error) {
-   alert('logout successfully')
-   location.href = 'index.html'
-}
- }catch(er){
-  console.log(er);
-  
- }
-}
-
-logoutBtn && logoutBtn.addEventListener('click',logout)
+logoutBtn && logoutBtn.addEventListener("click", logout);
