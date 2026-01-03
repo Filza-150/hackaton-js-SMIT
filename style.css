@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background: radial-gradient(ellipse at bottom, #0f172a 0%, #0a1120 100%);
+}
+
+.gradient-text {
+        background: linear-gradient(90deg, #6366f1 0%, #22c55e 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .auth-form {
+        backdrop-filter: blur(16px);
+        background: rgba(15, 23, 42, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .auth-input {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .auth-input:focus {
+        border-color: #6366f1;
+      }
+      
+      .auth-toggle {
+        color: #6366f1;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      
+      .auth-toggle:hover {
+        text-decoration: underline;
+      }
+      #editor {
+        border-radius: 0.5rem;
+        box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+      }
+
+
+
