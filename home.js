@@ -79,7 +79,7 @@ function goToProfile() {
 function goHome() {
   window.location.href = "home.html";
 }
-
+ 
 
 
 function logout() {

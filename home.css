@@ -17,7 +17,7 @@ body {
   padding: 15px 20px;
   background: radial-gradient(ellipse at bottom, #0f172a 0%, #0a1120 100%);
 }
-
+ 
 .gradient-text {
   background: linear-gradient(90deg, #6366f1 0%, #22c55e 100%);
   -webkit-background-clip: text;

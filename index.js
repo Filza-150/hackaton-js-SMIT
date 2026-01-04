@@ -18,7 +18,7 @@
       let currentUser = null;
       let users = JSON.parse(localStorage.getItem("users") || "{}");
       let projects = {};
-      
+       
       // Check if user is logged in on page load
       document.addEventListener('DOMContentLoaded', () => {
         const loggedInUser = localStorage.getItem('currentUser');

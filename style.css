@@ -16,7 +16,7 @@
 
 ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.1);
-}
+} 
 
 body {
   background: radial-gradient(ellipse at bottom, #0f172a 0%, #0a1120 100%);

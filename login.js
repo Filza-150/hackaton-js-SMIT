@@ -16,7 +16,7 @@ async function login(e) {
     if (!lpassword.value) {
       alert("plz enter your password");
       return;
-    }
+    } 
     const { data, error } = await supabase.auth.signInWithPassword({
       email: lemail.value,
       password: lpassword.value,
