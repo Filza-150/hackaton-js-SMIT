@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html">
+    <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-glow"
+            >
+            </div>
+            <h1 class="text-2xl font-bold gradient-text">
+              Post Application
+            </h1>
+          </div>
+          </a>
+
+
+    <div class="profile" onclick="goToProfile()">
+      <img src="https://i.pravatar.cc/40" />
+      <span id="nav-username"></span>
+    </div>
+  </nav>
+
+  <!-- Feed -->
+  <section class="feed" id="feed"></section>
+
+<script src="home.js"></script>
+</body>
+</html>

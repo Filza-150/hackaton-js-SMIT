@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <button onclick="goHome()">← Back</button>
+  <h2 id="profile-name"></h2>
+</nav>
+
+<section class="create-post">
+  <input style="color: black;" type="text" id="title" placeholder="Post title">
+  <textarea style="color: black;" id="content" placeholder="Write something..."></textarea>
+  <button onclick="createPost()">Create Post</button>
+</section>
+
+<section class="feed" id="my-posts"></section>
+
+<script src="home.js"></script>
+</body>
+</html>
