@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hackaton</title>
+    <title>Hackaton Post Application</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -271,7 +271,7 @@
               <i class="fas fa-code text-white text-lg"></i>
             </div>
             <h1 class="text-2xl font-bold gradient-text">
-              DeepUI Project Manager
+              Post Application
             </h1>
           </div>
           <div class="flex items-center space-x-4">
@@ -307,129 +307,51 @@
           <!-- Hero section -->
           <section class="mb-12 text-center">
             <h2 class="text-4xl font-bold mb-4">
-              Manage your web projects with elegance
+              Express Yourself Through Posts
             </h2>
             <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-              A complete environment to edit, preview, and export your HTML/CSS/JS projects
+              A modern platform where you can create, edit, and publish posts effortlessly anytime.
             </p>
           </section>
 
           <!-- Search + Add project -->
           <section class="mb-10">
-            <div
+            <div style="display: flex; justify-content: center; padding-top: 50px;"
               class="flex flex-col md:flex-row justify-between items-center gap-6"
             >
-              <div class="relative flex-1 w-full">
-                <div
-                  class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
-                >
-                  <i class="fas fa-search text-gray-500"></i>
-                </div>
-                <input
-                  type="text"
-                  id="search-input"
-                  placeholder="Search for a project...."
-                  oninput="searchProjects()"
-                  class="w-full bg-glass2 backdrop-blur-sm text-white pl-10 pr-4 py-3 rounded-xl border border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 outline-none shadow"
-                />
-              </div>
-
-              <button
+              
+<a href="home.html">
+              
+          <button 
                 onclick="saveFiles()"
                 class="flex items-center space-x-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-xl hover:scale-105 hover:shadow-glow transition-all shadow-lg pulse"
               >
                 <i class="fas fa-plus-circle"></i>
-                <span>New project.</span>
+                <span>Start creating your posts in just one click</span>
               </button>
+              </a>
             </div>
           </section>
 
           <!-- Project form -->
-          <section
-            class="mb-10 bg-glass2 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 shadow-lg"
-          >
-            <h3 class="text-xl font-semibold mb-4 text-primary-500">
-              <i class="fas fa-folder-plus mr-2"></i>Create a new project
-            </h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label
-                  for="project-name"
-                  class="block text-sm font-medium text-gray-400 mb-2"
-                  >Project name</label
-                >
-                <div class="relative">
-                  <div
-                    class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
-                  >
-                    <i class="fas fa-file-signature text-gray-500"></i>
-                  </div>
-                  <input
-                    type="text"
-                    id="project-name"
-                    placeholder="My awesome project"
-                    class="w-full bg-glass backdrop-blur-xs text-white pl-10 pr-4 py-3 rounded-lg border border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all outline-none shadow"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label
-                  for="file-upload"
-                  class="block text-sm font-medium text-gray-400 mb-2"
-                  >Project files</label
-                >
-                <div class="relative">
-                  <input
-                    type="file"
-                    id="file-upload"
-                    multiple
-                    class="block w-full text-sm text-gray-400 file:mr-4 file:py-3 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-500 file:text-white hover:file:bg-primary-600 file:transition-all file:cursor-pointer file:shadow cursor-pointer bg-glass backdrop-blur-xs rounded-lg border border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none"
-                  />
-                </div>
-              </div>
-            </div>
-          </section>
+          
 
           <!-- Projects grid -->
           <section class="mb-14">
-            <h3
-              class="text-2xl font-semibold mb-6 text-primary-500 flex items-center"
-            >
-              <i class="fas fa-folder-open mr-3"></i>My projects
-            </h3>
+            
 
             <div
               id="project-list"
               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             ></div>
 
-            <div id="empty-state" class="text-center py-16 hidden">
-              <div
-                class="mx-auto w-24 h-24 bg-glass2 backdrop-blur-sm rounded-full flex items-center justify-center mb-6 shadow-inner"
-              >
-                <i class="fas fa-folder text-4xl text-gray-500"></i>
-              </div>
-              <h4 class="text-xl font-medium text-gray-300 mb-2">
-                No projects found
-              </h4>
-              <p class="text-gray-500 max-w-md mx-auto">
-                Start by creating a new project by clicking the "New Project" button above.
-              </p>
+            <div id="empty-state" class="text-center py-8 hidden">
+              
             </div>
           </section>
-
-          
             <!-- Editor -->
-            
-              
-
+           
               <div id="editor"></div>
-
-             
-            
-
             <!-- Preview -->
             
           </section>
@@ -448,7 +370,7 @@
               >
                 <i class="fas fa-code text-white text-sm"></i>
               </div>
-              <span class="text-lg font-semibold gradient-text">DeepUI</span>
+              <span class="text-lg font-semibold gradient-text">Manage your content quickly and easily.</span>
             </div>
 
             <div class="flex space-x-6">
@@ -476,7 +398,7 @@
           <div
             class="mt-8 pt-8 border-t border-gray-700/50 text-center text-gray-500 text-sm"
           >
-            <p>© 2023 DeepUI Project Manager. All rights reserved.</p>
+            <p>© 2026 post application. All rights reserved.</p>
           </div>
         </div>
       </footer>
