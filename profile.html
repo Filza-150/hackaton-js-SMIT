@@ -9,10 +9,29 @@
 </head>
 <body>
 
-<nav class="navbar">
+<!-- <nav class="navbar">
   <button onclick="goHome()">← Back</button>
   <h2 id="profile-name"></h2>
+</nav> -->
+
+<nav class="navbar flex justify-between items-center px-4 py-2 bg-dark text-white">
+  <div class="flex items-center gap-4">
+    <button onclick="goHome()" class="px-3 py-1 rounded bg-gray-700 hover:bg-gray-600">← Back</button>
+    
+  </div>
+  
+  <!-- Logout Button -->
+   <div class="flex items-center gap-4">
+  <button onclick="logout()" 
+          class="px-3 py-1 rounded bg-gray-600 text-white">
+    Logout
+  </button>
+  <h2 id="profile-name" class="text-lg font-bold"></h2>
+  </div>
 </nav>
+
+
+
 
 <section class="create-post">
   <input style="color: black;" type="text" id="title" placeholder="Post title">

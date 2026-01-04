@@ -79,3 +79,10 @@ function goToProfile() {
 function goHome() {
   window.location.href = "home.html";
 }
+
+
+
+function logout() {
+  localStorage.removeItem("currentUser");  // Current user clear
+  window.location.href = "index.html";      // Redirect login page
+}
